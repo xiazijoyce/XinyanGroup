@@ -150,7 +150,12 @@ const packagingOptions = [
   { name: '水润玻璃瓶', price: '1.2000' },
   { name: '磨砂泵头', price: '0.6800' },
   { name: '亮面纸盒', price: '0.4500' },
-  { name: '真空瓶', price: '2.4000' }
+  { name: '真空瓶', price: '2.4000' },
+  { name: '烫金外盒', price: '0.7200' },
+  { name: '铝管', price: '0.9800' },
+  { name: '拉链袋', price: '0.1800' },
+  { name: '防伪贴', price: '0.0800' },
+  { name: '卡盒内托', price: '0.2200' }
 ]
 
 const finishedProducts = reactive([
@@ -182,6 +187,127 @@ const finishedProducts = reactive([
     status: '启用',
     packaging: [
       { name: '真空瓶', usage: '1', price: '2.4000' },
+      { name: '亮面纸盒', usage: '1', price: '0.4500' }
+    ]
+  },
+  {
+    id: 'FP-003',
+    name: '修护舒缓精华',
+    brand: '植本',
+    category: '精华',
+    spec: '30ml',
+    formula: 'F-1003',
+    version: 'V1.0',
+    referencePrice: '198.00',
+    status: '启用',
+    packaging: [
+      { name: '真空瓶', usage: '1', price: '2.4000' },
+      { name: '亮面纸盒', usage: '1', price: '0.4500' }
+    ]
+  },
+  {
+    id: 'FP-004',
+    name: '清润补水面膜',
+    brand: '素颜',
+    category: '面膜',
+    spec: '25ml',
+    formula: 'F-1001',
+    version: 'V1.1',
+    referencePrice: '58.00',
+    status: '启用',
+    packaging: [
+      { name: '亮面纸盒', usage: '1', price: '0.4500' },
+      { name: '拉链袋', usage: '1', price: '0.1800' }
+    ]
+  },
+  {
+    id: 'FP-005',
+    name: '柔润丝滑口红',
+    brand: '绮妍',
+    category: '口红',
+    spec: '4g',
+    formula: 'F-1002',
+    version: 'V1.0',
+    referencePrice: '138.00',
+    status: '启用',
+    packaging: [
+      { name: '亮面纸盒', usage: '1', price: '0.4500' },
+      { name: '防伪贴', usage: '1', price: '0.0800' }
+    ]
+  },
+  {
+    id: 'FP-006',
+    name: '焕亮妆前乳',
+    brand: '晨光',
+    category: '粉底液',
+    spec: '40ml',
+    formula: 'F-1002',
+    version: 'V1.1',
+    referencePrice: '158.00',
+    status: '启用',
+    packaging: [
+      { name: '真空瓶', usage: '1', price: '2.4000' },
+      { name: '亮面纸盒', usage: '1', price: '0.4500' }
+    ]
+  },
+  {
+    id: 'FP-007',
+    name: '高保湿面霜',
+    brand: '琉光',
+    category: '面霜',
+    spec: '60ml',
+    formula: 'F-1001',
+    version: 'V2.0',
+    referencePrice: '188.00',
+    status: '启用',
+    packaging: [
+      { name: '水润玻璃瓶', usage: '1', price: '1.2000' },
+      { name: '磨砂泵头', usage: '1', price: '0.6800' },
+      { name: '烫金外盒', usage: '1', price: '0.7200' }
+    ]
+  },
+  {
+    id: 'FP-008',
+    name: '清肌洁面乳',
+    brand: '清肌',
+    category: '面霜',
+    spec: '120ml',
+    formula: 'F-1003',
+    version: 'V1.0',
+    referencePrice: '88.00',
+    status: '启用',
+    packaging: [
+      { name: '铝管', usage: '1', price: '0.9800' },
+      { name: '亮面纸盒', usage: '1', price: '0.4500' }
+    ]
+  },
+  {
+    id: 'FP-009',
+    name: '维稳修护乳',
+    brand: '悦颜',
+    category: '精华',
+    spec: '50ml',
+    formula: 'F-1003',
+    version: 'V1.0',
+    referencePrice: '168.00',
+    status: '启用',
+    packaging: [
+      { name: '真空瓶', usage: '1', price: '2.4000' },
+      { name: '亮面纸盒', usage: '1', price: '0.4500' }
+    ]
+  },
+  {
+    id: 'FP-010',
+    name: '光感气垫粉底',
+    brand: '初色',
+    category: '粉底液',
+    spec: '15g',
+    formula: 'F-1002',
+    version: 'V1.1',
+    referencePrice: '178.00',
+    status: '启用',
+    packaging: [
+      { name: '卡盒内托', usage: '1', price: '0.2200' },
       { name: '亮面纸盒', usage: '1', price: '0.4500' }
     ]
   }

@@ -91,6 +91,66 @@ const tableData = reactive(
             { name: '检测报告', status: 'pending', statusLabel: '待办', owner: '', time: '' },
             { name: '备案上传', status: 'pending', statusLabel: '待办', owner: '', time: '' }
           ]
+        },
+        {
+          id: 'REQ-240502',
+          customer: '初色科技',
+          brand: '初色',
+          product: '清透粉底液',
+          quantity: '8000',
+          status: '进行中',
+          nodes: [
+            { name: '文案', status: 'done', statusLabel: '已办', owner: '文案组', time: '2024-05-03' },
+            { name: '打样彩盒', status: 'pending', statusLabel: '待办', owner: '', time: '' },
+            { name: '备案送检', status: 'pending', statusLabel: '待办', owner: '', time: '' },
+            { name: '检测报告', status: 'pending', statusLabel: '待办', owner: '', time: '' },
+            { name: '备案上传', status: 'pending', statusLabel: '待办', owner: '', time: '' }
+          ]
+        },
+        {
+          id: 'REQ-240503',
+          customer: '植本实验室',
+          brand: '植本',
+          product: '修护舒缓精华',
+          quantity: '6000',
+          status: '进行中',
+          nodes: [
+            { name: '文案', status: 'done', statusLabel: '已办', owner: '文案组', time: '2024-05-05' },
+            { name: '打样彩盒', status: 'done', statusLabel: '已办', owner: '打样组', time: '2024-05-07' },
+            { name: '备案送检', status: 'done', statusLabel: '已办', owner: '备案组', time: '2024-05-10' },
+            { name: '检测报告', status: 'pending', statusLabel: '待办', owner: '', time: '' },
+            { name: '备案上传', status: 'pending', statusLabel: '待办', owner: '', time: '' }
+          ]
+        },
+        {
+          id: 'REQ-240504',
+          customer: '悦颜集团',
+          brand: '悦颜',
+          product: '维稳修护乳',
+          quantity: '15000',
+          status: '已结案',
+          nodes: [
+            { name: '文案', status: 'done', statusLabel: '已办', owner: '文案组', time: '2024-04-18' },
+            { name: '打样彩盒', status: 'done', statusLabel: '已办', owner: '打样组', time: '2024-04-20' },
+            { name: '备案送检', status: 'done', statusLabel: '已办', owner: '备案组', time: '2024-04-24' },
+            { name: '检测报告', status: 'done', statusLabel: '已办', owner: '检测组', time: '2024-04-27' },
+            { name: '备案上传', status: 'done', statusLabel: '已办', owner: '备案组', time: '2024-04-28' }
+          ]
+        },
+        {
+          id: 'REQ-240505',
+          customer: '琉光生物',
+          brand: '琉光',
+          product: '高保湿面霜',
+          quantity: '9000',
+          status: '进行中',
+          nodes: [
+            { name: '文案', status: 'done', statusLabel: '已办', owner: '文案组', time: '2024-05-06' },
+            { name: '打样彩盒', status: 'reject', statusLabel: '驳回', owner: '打样组', time: '2024-05-08', reason: '彩盒尺寸需调整' },
+            { name: '备案送检', status: 'pending', statusLabel: '待办', owner: '', time: '' },
+            { name: '检测报告', status: 'pending', statusLabel: '待办', owner: '', time: '' },
+            { name: '备案上传', status: 'pending', statusLabel: '待办', owner: '', time: '' }
+          ]
         }
       ]
 )

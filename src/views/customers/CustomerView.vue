@@ -93,7 +93,12 @@ const tableData = reactive([
   { id: 'CU-002', name: '初色科技', brand: '初色', type: '新锐品牌', contact: '顾晨', phone: '13500002222', level: 'B级', status: '启用' },
   { id: 'CU-003', name: '植本实验室', brand: '植本', type: '功效品牌', contact: '林雨', phone: '13500003333', level: 'A级', status: '启用' },
   { id: 'CU-004', name: '悦颜集团', brand: '悦颜', type: '渠道客户', contact: '郑敏', phone: '13500004444', level: 'B级', status: '启用' },
-  { id: 'CU-005', name: '丝柔美妆', brand: '丝柔', type: '品牌方', contact: '汪琪', phone: '13500005555', level: 'C级', status: '禁用' }
+  { id: 'CU-005', name: '丝柔美妆', brand: '丝柔', type: '品牌方', contact: '汪琪', phone: '13500005555', level: 'C级', status: '禁用' },
+  { id: 'CU-006', name: '琉光生物', brand: '琉光', type: '新锐品牌', contact: '罗安', phone: '13500006666', level: 'B级', status: '启用' },
+  { id: 'CU-007', name: '绮妍科技', brand: '绮妍', type: '功效品牌', contact: '姜雅', phone: '13500007777', level: 'A级', status: '启用' },
+  { id: 'CU-008', name: '素颜实验室', brand: '素颜', type: '品牌方', contact: '曾琪', phone: '13500008888', level: 'B级', status: '启用' },
+  { id: 'CU-009', name: '晨光商贸', brand: '晨光', type: '渠道客户', contact: '齐珂', phone: '13500009999', level: 'C级', status: '启用' },
+  { id: 'CU-010', name: '清肌生研', brand: '清肌', type: '功效品牌', contact: '任清', phone: '13500001234', level: 'A级', status: '启用' }
 ])
 
 const columns = [

@@ -78,7 +78,11 @@ const tableData = reactive(
   store.quotes.length
     ? store.quotes
     : [
-        { id: 'QT-240501', requirementId: 'REQ-240501', customer: '澄光生物', brand: '澄光', product: '润泽补水面霜', quantity: '12000', totalQuote: '356000.00', status: '待审核' }
+        { id: 'QT-240501', requirementId: 'REQ-240501', customer: '澄光生物', brand: '澄光', product: '润泽补水面霜', quantity: '12000', totalQuote: '356000.00', status: '待审核' },
+        { id: 'QT-240502', requirementId: 'REQ-240502', customer: '初色科技', brand: '初色', product: '清透粉底液', quantity: '8000', totalQuote: '278000.00', status: '草稿' },
+        { id: 'QT-240503', requirementId: 'REQ-240503', customer: '植本实验室', brand: '植本', product: '修护舒缓精华', quantity: '6000', totalQuote: '312000.00', status: '待审核' },
+        { id: 'QT-240504', requirementId: 'REQ-240504', customer: '悦颜集团', brand: '悦颜', product: '维稳修护乳', quantity: '15000', totalQuote: '498000.00', status: '审核通过' },
+        { id: 'QT-240505', requirementId: 'REQ-240505', customer: '琉光生物', brand: '琉光', product: '高保湿面霜', quantity: '9000', totalQuote: '336000.00', status: '审核驳回', rejectReason: '利润系数需调整' }
       ]
 )
 

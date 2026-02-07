@@ -35,8 +35,15 @@ const router = useRouter()
 const keyword = ref('')
 
 const store = getStore()
+const defaultClosed = [
+  { id: 'REQ-240401', customer: '悦颜集团', brand: '悦颜', product: '维稳修护乳', quantity: '15000', closedAt: '2024-04-28 16:20' },
+  { id: 'REQ-240402', customer: '植本实验室', brand: '植本', product: '修护舒缓精华', quantity: '6000', closedAt: '2024-04-30 11:10' }
+]
+
 const closedData = reactive(
-  store.requirements.filter((item) => item.status === '已结案').map((item) => ({ ...item, closedAt: item.closedAt || new Date().toLocaleString() }))
+  store.requirements.filter((item) => item.status === '已结案').length
+    ? store.requirements.filter((item) => item.status === '已结案').map((item) => ({ ...item, closedAt: item.closedAt || new Date().toLocaleString() }))
+    : defaultClosed
 )
 
 const columns = [

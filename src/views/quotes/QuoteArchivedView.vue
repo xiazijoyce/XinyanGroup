@@ -33,8 +33,15 @@ import { getStore } from '../../utils/dataStore'
 const keyword = ref('')
 const store = getStore()
 
+const defaultArchived = [
+  { id: 'QT-240320', customer: '悦颜集团', product: '维稳修护乳', totalQuote: '498000.00', archivedAt: '2024-03-28 14:10' },
+  { id: 'QT-240318', customer: '植本实验室', product: '修护舒缓精华', totalQuote: '312000.00', archivedAt: '2024-03-26 09:40' }
+]
+
 const archivedData = reactive(
-  store.quotes.filter((item) => item.status === '已归档').map((item) => ({ ...item, archivedAt: item.archivedAt || new Date().toLocaleString() }))
+  store.quotes.filter((item) => item.status === '已归档').length
+    ? store.quotes.filter((item) => item.status === '已归档').map((item) => ({ ...item, archivedAt: item.archivedAt || new Date().toLocaleString() }))
+    : defaultArchived
 )
 
 const columns = [
