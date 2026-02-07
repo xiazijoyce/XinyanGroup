@@ -106,16 +106,17 @@ const menus = reactive([
     icon: Users,
     path: '/customers'
   },
-  {
-    label: '资料管理',
-    icon: Archive,
-    open: false,
-    children: [
-      { label: '成品档案', icon: PackageSearch, path: '/materials/finished' },
-      { label: '原料数据', icon: Boxes, path: '/materials/raw' },
-      { label: '包材数据', icon: Boxes, path: '/materials/packaging' },
-      { label: '供应商管理', icon: Building2, path: '/materials/suppliers' }
-    ]
+      {
+        label: '资料管理',
+        icon: Archive,
+        open: false,
+        children: [
+          { label: '品牌资料', icon: PackageSearch, path: '/materials/brands' },
+          { label: '成品档案', icon: PackageSearch, path: '/materials/finished' },
+          { label: '原料数据', icon: Boxes, path: '/materials/raw' },
+          { label: '包材数据', icon: Boxes, path: '/materials/packaging' },
+          { label: '供应商管理', icon: Building2, path: '/materials/suppliers' }
+        ]
   },
   {
     label: '系统管理',

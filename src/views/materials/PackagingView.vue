@@ -14,6 +14,7 @@
         <el-table-column prop="name" label="包材名称" min-width="160" />
         <el-table-column prop="type" label="类型" width="120" />
         <el-table-column prop="spec" label="规格" width="120" />
+        <el-table-column prop="brand" label="品牌" width="120" />
         <el-table-column prop="price" label="单价(元/个)" width="140" align="right" />
         <el-table-column prop="stock" label="库存数量" width="120" align="right" />
         <el-table-column prop="supplier" label="供应商" width="140" />
@@ -42,6 +43,11 @@
         <el-form-item label="规格">
           <el-input v-model="form.spec" />
         </el-form-item>
+        <el-form-item label="品牌">
+          <el-select v-model="form.brand" placeholder="选择品牌">
+            <el-option v-for="brand in brandOptions" :key="brand" :label="brand" :value="brand" />
+          </el-select>
+        </el-form-item>
         <el-form-item label="单价">
           <el-input v-model="form.price" />
         </el-form-item>
@@ -69,6 +75,7 @@
 <script setup>
 import { computed, reactive, ref } from 'vue'
 import ExportPrintActions from '../../components/ExportPrintActions.vue'
+import { brandOptions } from '../../utils/brandData'
 
 const keyword = ref('')
 const dialogVisible = ref(false)
@@ -78,6 +85,7 @@ const form = reactive({
   name: '',
   type: '',
   spec: '',
+  brand: '',
   price: '',
   stock: '',
   supplier: '',
@@ -85,16 +93,16 @@ const form = reactive({
 })
 
 const tableData = reactive([
-  { id: 'PK-001', name: '水润玻璃瓶', type: '瓶', spec: '100ml', price: '1.2000', stock: '5000.00', supplier: '清澈包材', status: '启用' },
-  { id: 'PK-002', name: '磨砂泵头', type: '泵', spec: '28/410', price: '0.6800', stock: '8000.00', supplier: '清澈包材', status: '启用' },
-  { id: 'PK-003', name: '亮面纸盒', type: '盒', spec: '120*60*40', price: '0.4500', stock: '12000.00', supplier: '印象包装', status: '启用' },
-  { id: 'PK-004', name: '铝管', type: '管', spec: '50ml', price: '0.9800', stock: '6000.00', supplier: '新锐包材', status: '启用' },
-  { id: 'PK-005', name: '真空瓶', type: '瓶', spec: '30ml', price: '2.4000', stock: '3200.00', supplier: '星耀包材', status: '启用' },
-  { id: 'PK-006', name: '烫金外盒', type: '盒', spec: '150*80*50', price: '0.7200', stock: '9000.00', supplier: '印象包装', status: '启用' },
-  { id: 'PK-007', name: '软管盖', type: '盖', spec: '15mm', price: '0.1200', stock: '15000.00', supplier: '新锐包材', status: '禁用' },
-  { id: 'PK-008', name: '拉链袋', type: '袋', spec: '200*120', price: '0.1800', stock: '11000.00', supplier: '极简包材', status: '启用' },
-  { id: 'PK-009', name: '卡盒内托', type: '托', spec: '纸托', price: '0.2200', stock: '7000.00', supplier: '印象包装', status: '启用' },
-  { id: 'PK-010', name: '防伪贴', type: '贴', spec: '25*25', price: '0.0800', stock: '20000.00', supplier: '星耀包材', status: '启用' }
+  { id: 'PK-001', name: '水润玻璃瓶', type: '瓶', spec: '100ml', brand: '澄光', price: '1.2000', stock: '5000.00', supplier: '清澈包材', status: '启用' },
+  { id: 'PK-002', name: '磨砂泵头', type: '泵', spec: '28/410', brand: '澄光', price: '0.6800', stock: '8000.00', supplier: '清澈包材', status: '启用' },
+  { id: 'PK-003', name: '亮面纸盒', type: '盒', spec: '120*60*40', brand: '初色', price: '0.4500', stock: '12000.00', supplier: '印象包装', status: '启用' },
+  { id: 'PK-004', name: '铝管', type: '管', spec: '50ml', brand: '清肌', price: '0.9800', stock: '6000.00', supplier: '新锐包材', status: '启用' },
+  { id: 'PK-005', name: '真空瓶', type: '瓶', spec: '30ml', brand: '植本', price: '2.4000', stock: '3200.00', supplier: '星耀包材', status: '启用' },
+  { id: 'PK-006', name: '烫金外盒', type: '盒', spec: '150*80*50', brand: '琉光', price: '0.7200', stock: '9000.00', supplier: '印象包装', status: '启用' },
+  { id: 'PK-007', name: '软管盖', type: '盖', spec: '15mm', brand: '清肌', price: '0.1200', stock: '15000.00', supplier: '新锐包材', status: '禁用' },
+  { id: 'PK-008', name: '拉链袋', type: '袋', spec: '200*120', brand: '素颜', price: '0.1800', stock: '11000.00', supplier: '极简包材', status: '启用' },
+  { id: 'PK-009', name: '卡盒内托', type: '托', spec: '纸托', brand: '初色', price: '0.2200', stock: '7000.00', supplier: '印象包装', status: '启用' },
+  { id: 'PK-010', name: '防伪贴', type: '贴', spec: '25*25', brand: '绮妍', price: '0.0800', stock: '20000.00', supplier: '星耀包材', status: '启用' }
 ])
 
 const columns = [
@@ -102,6 +110,7 @@ const columns = [
   { label: '包材名称', prop: 'name' },
   { label: '类型', prop: 'type' },
   { label: '规格', prop: 'spec' },
+  { label: '品牌', prop: 'brand' },
   { label: '单价(元/个)', prop: 'price' },
   { label: '库存数量', prop: 'stock' },
   { label: '供应商', prop: 'supplier' },
@@ -115,7 +124,7 @@ const filteredData = computed(() => {
 
 const openDialog = () => {
   editingId.value = null
-  Object.assign(form, { id: '', name: '', type: '', spec: '', price: '', stock: '', supplier: '', status: '启用' })
+  Object.assign(form, { id: '', name: '', type: '', spec: '', brand: '', price: '', stock: '', supplier: '', status: '启用' })
   dialogVisible.value = true
 }
 

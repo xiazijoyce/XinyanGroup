@@ -44,7 +44,9 @@
             <el-input v-model="form.name" />
           </el-form-item>
           <el-form-item label="品牌">
-            <el-input v-model="form.brand" />
+            <el-select v-model="form.brand" placeholder="选择品牌">
+              <el-option v-for="brand in brandOptions" :key="brand" :label="brand" :value="brand" />
+            </el-select>
           </el-form-item>
           <el-form-item label="品类">
             <el-select v-model="form.category">
@@ -129,6 +131,7 @@
 import { computed, reactive, ref } from 'vue'
 import Big from 'big.js'
 import ExportPrintActions from '../../components/ExportPrintActions.vue'
+import { brandOptions } from '../../utils/brandData'
 
 const keyword = ref('')
 const dialogVisible = ref(false)

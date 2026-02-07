@@ -18,6 +18,7 @@ const routes = [
   { path: '/formulas/compare', component: () => import('../views/formulas/FormulaCompareView.vue'), meta: { requiresAuth: true } },
   { path: '/customers', component: () => import('../views/customers/CustomerView.vue'), meta: { requiresAuth: true } },
   { path: '/materials/finished', component: () => import('../views/materials/FinishedProductView.vue'), meta: { requiresAuth: true } },
+  { path: '/materials/brands', component: () => import('../views/materials/BrandView.vue'), meta: { requiresAuth: true } },
   { path: '/materials/raw', component: () => import('../views/materials/RawMaterialView.vue'), meta: { requiresAuth: true } },
   { path: '/materials/packaging', component: () => import('../views/materials/PackagingView.vue'), meta: { requiresAuth: true } },
   { path: '/materials/suppliers', component: () => import('../views/materials/SupplierView.vue'), meta: { requiresAuth: true } },
